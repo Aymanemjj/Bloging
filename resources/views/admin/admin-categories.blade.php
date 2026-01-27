@@ -21,32 +21,33 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Description</th>
+                                            <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Description</th>
+                                            <th>Options</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach($categories as $category)
+
                                         <tr>
-                                            <td>Donna Snider</td>
-                                            <td>Customer Support</td>
-                                            <td>New York</td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                            <td>$112,000</td>
+                                            <td>{{$category->name}}</td>
+                                            <td>{{$category->description}}</td>
+                                            <td>
+                                                <form action="{{ route('categories.edit') }}">
+                                                    <button class="btn btn-secondary" type="submit" name="edit" value="{{$category->id}}">Edit</button>
+                                                </form>
+                                                <form action="{{ route('categories.delete') }}">
+                                                    <button class="btn btn-danger" type="submit" name="delete" value="{{$category->id}}">Delete</button>
+                                                </form>
+                                            </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -21,7 +21,7 @@ Route::get('/admin-posts', function(){
 });
 
 Route::get('/admin-categories', function(){
-    return view('admin.admin-categories');
+    return redirect()->route('categories.index');
 });
 
 Route::get('/admin-users', function(){
