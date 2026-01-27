@@ -46,7 +46,7 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="/admin-posts">
+                            <a class="nav-link" href="{{ route('posts.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Manage Posts
                             </a>

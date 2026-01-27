@@ -17,7 +17,7 @@ Route::get('/admin-dashboard', function(){
 });
 
 Route::get('/admin-posts', function(){
-    return view('admin.admin-posts');
+    return redirect()->route('posts.index');
 });
 
 Route::get('/admin-categories', function(){
@@ -30,8 +30,6 @@ Route::get('/admin-users', function(){
 
 
 
-/* Route::resource('categories', CategoryController::class);
- */
 
 Route::resource('posts', PostController::class);
 Route::resource('categories', CategoryController::class);

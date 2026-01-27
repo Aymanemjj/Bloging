@@ -14,7 +14,11 @@ class PostController extends Controller
         return view('admin.admin-posts', compact('posts'));
     }
 
-
+/*     public function home()
+    {
+        $posts = post::all();
+        return view('index', compact('posts'));
+    } */
 
     public function create()
     {
