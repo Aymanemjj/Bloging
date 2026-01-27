@@ -20,33 +20,47 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th>Options</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>Donna Snider</td>
-                                            <td>Customer Support</td>
-                                            <td>New York</td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                            <td>$112,000</td>
-                                        </tr>
+                                        @foreach ($posts as $post)
+                                            <tr>
+                                                <td>{{ $post->title }}</td>
+                                                <td>{{ $post->category_id }}</td>
+                                                <td>{{ $post->description }}</td>
+                                                <td>
+
+
+                                                    <div class="d-flex ">
+
+                                                        {{-- <a href="{{ route('posts.read', $post) }}"
+                                                            class="btn btn-success">Read</a>
+ --}}
+                                                        <a href="{{ route('posts.edit', $post) }}"
+                                                            class="btn btn-secondary">Edit</a>
+
+                                                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-danger"
+                                                                type="submit">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

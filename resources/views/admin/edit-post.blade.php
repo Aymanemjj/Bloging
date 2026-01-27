@@ -1,9 +1,10 @@
 <x-admin>
 
-    <h1>New post</h1>
+    <h1>Edit post</h1>
 
-    <form action="{{ route('posts.store') }}" method="POST">
+    <form action="{{ route('posts.update',$post) }}" method="POST">
         @csrf
+        @method('PUT')
 
         <label for="category">Category</label>
         <select class="form-control" name="category_id">
@@ -22,7 +23,7 @@
         <label for="content">Content:</label>
         <textarea class="form-control" name="content" id="content" rows="8" required></textarea>
 
-        <button class="btn btn-primary" type="submit">Post</button>
+        <button class="btn btn-primary" type="submit">Edit</button>
     </form>
 
     <br>
