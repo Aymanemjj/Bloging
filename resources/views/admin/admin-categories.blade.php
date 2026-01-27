@@ -1,5 +1,4 @@
-        
-    <x-admin>
+        <x-admin>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -13,6 +12,10 @@
                                 <i class="fas fa-table me-1"></i>
                                 Categories dataTable
                             </div>
+                            <div>
+                                <a href="{{ route('categories.create') }}" class="btn btn-primary">New category</a>
+                            </div>
+
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
@@ -50,4 +53,4 @@
                         </div>
                     </div>
                 </main>
-            </x-admin>
+        </x-admin>

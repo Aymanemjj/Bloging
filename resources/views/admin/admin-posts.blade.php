@@ -13,6 +13,9 @@
                                 <i class="fas fa-table me-1"></i>
                                 Posts dataTable
                             </div>
+                            <div>
+                                <a href="{{ route('posts.create') }}" class="btn btn-primary">New post</a>
+                            </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>

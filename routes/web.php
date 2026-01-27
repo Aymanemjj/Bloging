@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('index');
 });
 
 Route::get('/post', function () {
@@ -11,17 +13,25 @@ Route::get('/post', function () {
 });
 
 Route::get('/admin-dashboard', function(){
-    return view('admin-dashboard');
+    return view('admin.admin-dashboard');
 });
 
 Route::get('/admin-posts', function(){
-    return view('admin-posts');
+    return view('admin.admin-posts');
 });
 
 Route::get('/admin-categories', function(){
-    return view('admin-categories');
+    return view('admin.admin-categories');
 });
 
 Route::get('/admin-users', function(){
-    return view('admin-users');
+    return view('admin.admin-users');
 });
+
+
+
+/* Route::resource('categories', CategoryController::class);
+ */
+
+Route::resource('posts', PostController::class);
+Route::resource('categories', CategoryController::class);
