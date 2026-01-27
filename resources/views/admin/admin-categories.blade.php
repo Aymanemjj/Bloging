@@ -33,20 +33,26 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach($categories as $category)
+                                        @foreach ($categories as $category)
+                                            <tr>
+                                                <td>{{ $category->name }}</td>
+                                                <td>{{ $category->description }}</td>
+                                                <td>
 
-                                        <tr>
-                                            <td>{{$category->name}}</td>
-                                            <td>{{$category->description}}</td>
-                                            <td>
-                                                <form action="{{ route('categories.edit') }}">
-                                                    <button class="btn btn-secondary" type="submit" name="edit" value="{{$category->id}}">Edit</button>
-                                                </form>
-                                                <form action="{{ route('categories.delete') }}">
-                                                    <button class="btn btn-danger" type="submit" name="delete" value="{{$category->id}}">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
+
+                                                    <div class="d-flex ">
+                                                        <a href="{{ route('categories.edit', $category) }}"
+                                                            class="btn btn-secondary">Edit</a>
+
+                                                        <form action="{{ route('categories.destroy', $category) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn btn-danger"
+                                                                type="submit">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
