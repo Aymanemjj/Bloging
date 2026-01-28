@@ -14,9 +14,16 @@ The admin side:
 
 ## Layouts and Componenets
 2 different Componenets:
-### Admin
-with for the back office
-### main
-for the front office
+**admin** for the back office
+**main** for the front office
 ### Layouts
 these are the actuall pages, stuff that isent repeated
+
+## Admin dashboard
+**Utilises both Post and Category Controllers** 
+The dashboard allowes for creating editing and deleating of **Categories** and **Posts**
+## Index
+**Managed by the SiteController**
+
+Displays all the posts **paginated** to 3 per page, with the title, date, and description visible per post card.
+**Category filter** on the side, clicking on one will display all the posts belonging to that category
