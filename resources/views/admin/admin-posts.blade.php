@@ -38,13 +38,13 @@
                                         @foreach ($posts as $post)
                                             <tr>
                                                 <td>{{ $post->title }}</td>
-                                                <td>{{ $post->category_id }}</td>
+                                                <td>{{ $post->category }}</td>
                                                 <td>{{ $post->description }}</td>
                                                 <td>
 
 
                                                     <div class="d-flex ">
-
+                                                        
                                                         {{-- <a href="{{ route('posts.read', $post) }}"
                                                             class="btn btn-success">Read</a>
  --}}

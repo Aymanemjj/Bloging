@@ -1,4 +1,5 @@
 <x-admin>
+    <div class="mx-2"  id="layoutSidenav_content"> 
 
     <h1>Edit post</h1>
 
@@ -28,5 +29,5 @@
 
     <br>
     <a href="{{ route('posts.index') }}"><- Back</a>
-
+</div>
 </x-admin>

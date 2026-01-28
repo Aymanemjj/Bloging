@@ -1,5 +1,6 @@
 <x-admin>
 
+    <div class="mx-2"  id="layoutSidenav_content"> 
     <h1>New category</h1>
 
     <form action="{{ route('categories.store') }}" method="POST">
@@ -18,5 +19,5 @@
 
     <br>
     <a href="{{ route('categories.index') }}"><- Back</a>
-
+</div>
 </x-admin>

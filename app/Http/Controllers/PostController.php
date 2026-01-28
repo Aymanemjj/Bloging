@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\category;
 use Illuminate\Http\Request;
 use App\Models\post;
+ use \Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = post::all();
+        $posts = DB::table('posts')
+        ->join('categories', 'posts.category_id', '=', 'categories.id')
+        ->select('posts.*', 'categories.name AS category')
+        ->get();
+        
         return view('admin.admin-posts', compact('posts'));
     }
 
