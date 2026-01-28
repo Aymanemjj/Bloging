@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    return redirect()->route('site.index');
 });
 
 Route::get('/post', function () {
@@ -33,3 +34,4 @@ Route::get('/admin-users', function(){
 
 Route::resource('posts', PostController::class);
 Route::resource('categories', CategoryController::class);
+Route::resource('site', SiteController::class);
