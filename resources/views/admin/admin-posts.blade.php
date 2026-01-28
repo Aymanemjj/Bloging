@@ -38,16 +38,20 @@
                                         @foreach ($posts as $post)
                                             <tr>
                                                 <td>{{ $post->title }}</td>
-                                                <td>{{ $post->category }}</td>
+                                                @foreach($categories as $category)
+                                                    @if($category->id == $post->category_id)
+                                                <td>{{ $category->name }}</td>
+                                                @endif
+                                                @endforeach
                                                 <td>{{ $post->description }}</td>
                                                 <td>
 
 
                                                     <div class="d-flex ">
                                                         
-                                                        {{-- <a href="{{ route('posts.read', $post) }}"
+                                                        <a href="{{ route('site.show', $post) }}"
                                                             class="btn btn-success">Read</a>
- --}}
+
                                                         <a href="{{ route('posts.edit', $post) }}"
                                                             class="btn btn-secondary">Edit</a>
 

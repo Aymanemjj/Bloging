@@ -11,6 +11,16 @@ class PostController extends Controller
 {
     public function index()
     {
+        $posts = post::all();
+        $categories = category::all();
+        
+        return view('admin.admin-posts', compact('posts','categories'));
+    }
+
+
+    
+/*         public function index()
+    {
         $posts = DB::table('posts')
         ->join('categories', 'posts.category_id', '=', 'categories.id')
         ->select('posts.*', 'categories.name AS category')
@@ -18,7 +28,7 @@ class PostController extends Controller
         
         return view('admin.admin-posts', compact('posts'));
     }
-
+ */
 /*     public function home()
     {
         $posts = post::all();

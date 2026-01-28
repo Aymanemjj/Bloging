@@ -16,17 +16,18 @@ class SiteController extends Controller
     }
 
     public function show($id)
-    {
+    {   
+        $categories = category::all();
         $post = post::find($id);
-        return view('post', compact('post'));
+        return view('post', compact('post','categories'));
     }
 
     public function edit($id)
     {
-        if ($id === "All") {
-            $posts = post::all();
+        if ($id === "all") {
+            $posts = post::paginate(3);
         } else {
-            $posts = post::all()->where('category_id', $id);
+            $posts = post::where('category_id', $id)->paginate(3);
         }
         $categories = category::all();
         return view('index', compact('posts', 'categories'));
