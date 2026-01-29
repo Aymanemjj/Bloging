@@ -42,12 +42,12 @@
 
                                                     <div class="d-flex ">
                                                         <a href="{{ route('categories.edit', $category) }}"
-                                                            class="btn btn-secondary">Edit</a>
+                                                            class="btn btn-secondary mx-2">Edit</a>
 
                                                         <form action="{{ route('categories.destroy', $category) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button class="btn btn-danger"
+                                                            <button class="btn btn-danger mx-2"
                                                                 type="submit">Delete</button>
                                                         </form>
                                                     </div>

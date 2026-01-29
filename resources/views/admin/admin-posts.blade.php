@@ -50,15 +50,15 @@
                                                     <div class="d-flex ">
                                                         
                                                         <a href="{{ route('site.show', $post) }}"
-                                                            class="btn btn-success">Read</a>
+                                                            class="btn btn-success mx-2">Read</a>
 
                                                         <a href="{{ route('posts.edit', $post) }}"
-                                                            class="btn btn-secondary">Edit</a>
+                                                            class="btn btn-secondary mx-2">Edit</a>
 
                                                         <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button class="btn btn-danger"
+                                                            <button class="btn btn-danger mx-2"
                                                                 type="submit">Delete</button>
                                                         </form>
                                                     </div>
