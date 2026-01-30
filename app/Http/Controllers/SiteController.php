@@ -25,9 +25,9 @@ class SiteController extends Controller
     public function edit($id)
     {
         if ($id === "all") {
-            $posts = post::paginate(3);
+            $posts = post::paginate(5);
         } else {
-            $posts = post::where('category_id', $id)->paginate(3);
+            $posts = post::where('category_id', $id)->paginate(5);
         }
         $categories = category::all();
         return view('index', compact('posts', 'categories'));

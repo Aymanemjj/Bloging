@@ -59,8 +59,9 @@ class PostController extends Controller
 
     public function edit(post $post)
     {
-        $categories = category::all();
-        return view('admin.edit-post', compact('post','categories'));
+        $categories = category::all()->where('id', '!=', $post->category_id);
+        $oldCategory = category::find($post->category_id);
+        return view('admin.edit-post', compact('post','categories','oldCategory'));
     }
 
     public function update(Request $request, post $post)
