@@ -1,5 +1,4 @@
-        
-    <x-admin>
+        <x-admin>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -38,24 +37,25 @@
                                         @foreach ($posts as $post)
                                             <tr>
                                                 <td>{{ $post->title }}</td>
-                                                @foreach($categories as $category)
-                                                    @if($category->id == $post->category_id)
-                                                <td>{{ $category->name }}</td>
-                                                @endif
+                                                @foreach ($categories as $category)
+                                                    @if ($category->id == $post->category_id)
+                                                        <td>{{ $category->name }}</td>
+                                                    @endif
                                                 @endforeach
                                                 <td>{{ $post->description }}</td>
                                                 <td>
 
 
                                                     <div class="d-flex ">
-                                                        
+
                                                         <a href="{{ route('site.show', $post) }}"
                                                             class="btn btn-success mx-2">Read</a>
 
                                                         <a href="{{ route('posts.edit', $post) }}"
                                                             class="btn btn-secondary mx-2">Edit</a>
 
-                                                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                                        <form action="{{ route('posts.destroy', $post) }}"
+                                                            method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button class="btn btn-danger mx-2"
@@ -71,4 +71,4 @@
                         </div>
                     </div>
                 </main>
-            </x-admin>
+        </x-admin>
